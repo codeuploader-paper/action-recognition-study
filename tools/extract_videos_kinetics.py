@@ -32,8 +32,6 @@ args = parser.parse_args()
 # shorter_side = 331
 # image_format = 'jpg'
 
-ROOT = "/home/chenrich/dataset/ActivityNet/Crawler/Kinetics"
-
 train_file = "{}/data/kinetics-{}_train.csv".format(args.input_root, args.num_classes)
 val_file = "{}/data/kinetics-{}_val.csv".format(args.input_root, args.num_classes)
 test_file = "{}/data/kinetics-{}_test.csv".format(args.input_root, args.num_classes)
@@ -198,7 +196,7 @@ def create_train_video(shorter_side):
                       file=f_w, flush=True)
             else:
                 print("{};1;{};{}".format(
-                    os.path.join('train', id_to_label[label_id], video_id), frame_num,
+                    os.path.join('images/train', id_to_label[label_id], video_id), frame_num,
                     label_id), file=f, flush=True)
             if curr_idx % 1000 == 0:
                 print("{}/{}".format(curr_idx, total_videos), flush=True)
@@ -234,7 +232,7 @@ def create_val_video(shorter_side):
                       file=f_w, flush=True)
             else:
                 print("{};1;{};{}".format(
-                    os.path.join('val', id_to_label[label_id], video_id), frame_num,
+                    os.path.join('images/val', id_to_label[label_id], video_id), frame_num,
                     label_id), file=f, flush=True)
             if curr_idx % 1000 == 0:
                 print("{}/{}".format(curr_idx, total_videos))
@@ -261,7 +259,7 @@ def create_test_video(shorter_side):
                 print("{},{},{},test".format(youtube_id, time_start, time_end), file=f_w,
                       flush=True)
             else:
-                print("{} 1 {}".format(os.path.join('test', video_id), frame_num), file=f,
+                print("{} 1 {}".format(os.path.join('images/test', video_id), frame_num), file=f,
                       flush=True)
             print("{}/{}".format(curr_idx, total_videos))
             curr_idx += 1

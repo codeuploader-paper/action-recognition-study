@@ -1,30 +1,30 @@
 #!/usr/bin/env python3
 
 import os
-import json
-import numpy as np
-#import skvideo.io
-import cv2
-import sys
 import concurrent.futures
 from shutil import copyfile
 import subprocess
-from tqdm import tqdm
+
+input_folder_root = ""
+if input_folder_root == "":
+    raise ValueError("Please set input_folder_root")
+
+output_folder_root = ""
+if output_folder_root == "":
+    raise ValueError("Please set output_folder_root")
 
 # input
-label_file = "/mnt/glusterfs/GVolStrp1/TEXTGEN/datasets/Moments_in_Time_256x256_30fps/moments_categories.txt"
-train_file = "/mnt/glusterfs/GVolStrp1/TEXTGEN/datasets/Moments_in_Time_256x256_30fps/trainingSet.csv"
-val_file = "/mnt/glusterfs/GVolStrp1/TEXTGEN/datasets/Moments_in_Time_256x256_30fps/validationSet.csv"
-#test_file = "/home/chenrich/dataset/something2something_v2/something-something-v2-test.json"
-video_folder = "/mnt/glusterfs/GVolStrp1/TEXTGEN/datasets/Moments_in_Time_256x256_30fps"
+label_file = "{}/moments_categories.txt".format(input_folder_root)
+train_file = "{}/trainingSet.csv".format(input_folder_root)
+val_file = "{}/validationSet.csv".format(input_folder_root)
+video_folder = input_folder_root
 
 # output
-train_img_folder = "/nvme0/QFAN/Moments_30fps/training_256"
-val_img_folder = "/nvme0/QFAN/Moments_30fps/validation_256"
-#test_img_folder = "/home/chenrich/dataset/something2something_v2/testing_256"
-train_file_list = "/nvme0/QFAN/Moments_30fps/training_256.txt"
-val_file_list = "/nvme0/QFAN/Moments_30fps/validation_256.txt"
-#test_file_list = "/home/chenrich/dataset/something2something_v2/testing_256.txt"
+train_img_folder = "{}/train".format(output_folder_root)
+val_img_folder = "{}/val".format(output_folder_root)
+train_file_list = "{}/train.txt".format(output_folder_root)
+val_file_list = "{}/val.txt".format(output_folder_root)
+
 
 def load_categories(file_path):
     id_to_label = {}
@@ -39,6 +39,7 @@ def load_categories(file_path):
             id_to_label[cls_id] = label[0]
             label_to_id[label[0]] = cls_id
     return id_to_label, label_to_id
+
 
 id_to_label, label_to_id = load_categories(label_file)
 
@@ -58,61 +59,6 @@ def load_video_list(file_path):
 
 train_videos = load_video_list(train_file)
 val_videos = load_video_list(val_file)
-#test_videos = load_test_video_list(test_file)
-
-
-def resize_to_short_side(h, w, short_side=360):
-    newh, neww = h, w
-    if h < w:
-        newh = short_side
-        neww = (w / h) * newh
-    else:
-        neww = short_side
-        newh = (h / w) * neww
-    neww = int(neww + 0.5)
-    newh = int(newh + 0.5)
-    return newh, neww
-
-def video_to_images_opencv(video, basedir, targetdir, short_side=256):
-    try:
-        cls_id = label_to_id[video[1]]
-    except:
-        cls_id = -1
-    filename = os.path.join(basedir, video[0] + ".webm")
-    output_foldername = os.path.join(targetdir, video[0])
-    if not os.path.exists(filename):
-        print("{} is not existed.".format(filename))
-        return video[0], cls_id, 0
-    else:
-        try:
-            cap = cv2.VideoCapture(filename)
-            width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-            height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-        except:
-            print("Can not get video info: {}".format(filename))
-            return video[0], cls_id, 0
-        newh, neww = resize_to_short_side(height, width, short_side)
-        if not os.path.exists(output_foldername):
-            os.makedirs(output_foldername)
-
-        if not cap.isOpened():
-            print("video {} can not be opened.".format(filename))
-            return video[0], cls_id, 0
-
-        i = 0
-        while True:
-            ret, frame = cap.read()
-            if not ret:
-                break
-            output_filename = os.path.join(output_foldername, "{:04d}.jpg".format(i))
-            if not os.path.exists(output_filename):
-                frame = cv2.resize(frame, (neww, newh), interpolation=cv2.INTER_CUBIC)
-                cv2.imwrite(output_filename, frame)
-            i += 1
-
-        cap.release()
-        print("Finish {}, id: {} frames: {}".format(filename, cls_id, i))
-        return video[0], cls_id, i
 
 
 def video_to_images(video, basedir, targetdir):
@@ -141,7 +87,7 @@ def video_to_images(video, basedir, targetdir):
         try:
             subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT)
         except:
-            print("fail to convert {}, {}".format(filename))
+            print("fail to convert {}".format(filename))
             return video[0], cls_id, 0
 
         # get frame num
@@ -160,7 +106,7 @@ def video_to_images(video, basedir, targetdir):
 
 def create_train_video():
     with open(train_file_list, 'w') as f, concurrent.futures.ProcessPoolExecutor(max_workers=36) as executor:
-        futures = [executor.submit(video_to_images, video, os.path.join(video_folder, 'training'), train_img_folder)
+        futures = [executor.submit(video_to_images, video, os.path.join(video_folder, 'train'), train_img_folder)
                    for video in train_videos]
         total_videos = len(futures)
         curr_idx = 0
@@ -177,7 +123,7 @@ def create_train_video():
 
 def create_val_video():
     with open(val_file_list, 'w') as f, concurrent.futures.ProcessPoolExecutor(max_workers=36) as executor:
-        futures = [executor.submit(video_to_images, video, os.path.join(video_folder, 'validation'), val_img_folder)
+        futures = [executor.submit(video_to_images, video, os.path.join(video_folder, 'val'), val_img_folder)
                    for video in val_videos]
         total_videos = len(futures)
         curr_idx = 0
@@ -192,6 +138,5 @@ def create_val_video():
     print("Completed")
 
 
-#create_train_video()
+create_train_video()
 create_val_video()
-#create_test_video(256)
