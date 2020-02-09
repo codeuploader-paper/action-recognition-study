@@ -31,13 +31,13 @@ pip install -r requirement.txt
 ```
 
 ## Data Preparation
-Our dataloader supports to load videos in the following format:
+The dataloader (utils/video_dataset.py) can load videos (image sequences) stored in the following format:
 ```
 -- dataset_dir
 ---- train.txt
 ---- val.txt
 ---- test.txt
----- folder
+---- videos
 ------ video_0_folder
 -------- 00001.jpg
 -------- 00002.jpg
@@ -46,14 +46,18 @@ Our dataloader supports to load videos in the following format:
 ------ ...
 ```
 
-and the each line in `train.txt` and `val.txt` includes 4 elements and separated by a symbol, e.g. space or semicolon. 
+Each line in `train.txt` and `val.txt` includes 4 elements and separated by a symbol, e.g. space or semicolon. 
 Four elements (in order) include (1)relative paths to `video_x_folder` from `dataset_dir`, (2) starting frame number, usually 1, (3) ending frame number, (4) label id (a numeric number).
 
-The difference of `test.txt` is that the forth elements will always be `-1`.
+E.g., a `video_x` has `300` frames and belong to label `1`.
+```
+path/to/video_x_folder 1 300 1
+```
+The difference for `test.txt` is that each line will only have 3 elements (no label information).
 
 After that, you need to update the `utils/data_config.py` for the datasets accordingly.
 
-We provided three scripts in the `tools` folder to help convert the datasets we interested but some details in the scripts must be set accordingly. E.g., the path to videos.
+We provided three scripts in the `tools` folder to help convert some datasets but the details in the scripts must be set accordingly. E.g., the path to videos.
 
 
 ## Training and Evaluation
