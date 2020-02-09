@@ -63,6 +63,12 @@ We provided three scripts in the `tools` folder to help convert some datasets bu
 ## Training and Evaluation
 The `opts.py` illustrates the available options for training 2D and 3D models. Some options are only for 2D models or 3D models.
 
+You can get help via
+```
+python3 train.py --help
+```
+
+
 Here is an example to train a `64-frame I3D` on the `Kinetics400` datasets with `Uniform Sampling` as input.
 
 ```
@@ -78,7 +84,7 @@ Furthermore, you can set `num_crops` and `num_clips` for `test.py`.
 Here is an example to evaluate on the above model with 3 crops and 3 clips
 
 ```
-python3 train.py --datadir /path/to/folder --threed_data \
+python3 test.py --datadir /path/to/folder --threed_data \
 --dataset kinetics400 --frames_per_group 1 --groups 8 \
 --logdir snapshots/ --lr 0.01 --backbone_net i3d -b 64 -j 64 \
 -e --pretrained /path/to/file --num_clips 3 --num_crops 3
