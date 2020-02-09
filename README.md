@@ -51,8 +51,9 @@ Four elements (in order) include (1)relative paths to `video_x_folder` from `dat
 
 The difference of `test.txt` is that the forth elements will always be `-1`.
 
-
 After that, you need to update the `utils/data_config.py` for the datasets accordingly.
+
+We provided three scripts in the `tools` folder to help convert the datasets we interested but some details in the scripts must be set accordingly. E.g., the path to videos.
 
 
 ## Training and Evaluation
