@@ -2,6 +2,8 @@
 
 This repository contains a general implementation of 6 representative 2D and 3D approaches for action recognition including I3D [1], ResNet3D [2], S3D [3], R(2+1)D [4], TSN [5] and TAM [6]. 
 
+Results of mini-datasets and full-datasets can be found at [mini-datasets](./benchmark_mini.md) and [full-datasets](./benchmark_full.md). The trained models will be released soon.
+
 ```
 1. Joao Carreira and Andrew Zisserman. Quo vadis, action recognition? a new model and the kinetics dataset. In proceedings
 of the IEEE Conference on Computer Vision and Pattern Recognition, pages 6299–6308, 2017
