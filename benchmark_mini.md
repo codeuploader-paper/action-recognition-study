@@ -69,14 +69,14 @@ The model name should self-explain the experimental setting
 | mini_st2stv2-s3d-resnet-50-tp-f64-multisteps-syncbn-bs36-e35 | 68.3858 | 91.455 | 157,377,626,112 | 27,485,079 | 35|
 | | | | | |
 | | | | | |
-| mini_st2stv2-i3d_v2-f8-cosine-bs72-e75 | 56.3607 | 82.49 | 33,573,614,592 | 12,376,439 | 75 |
-| mini_st2stv2-i3d_v2-f16-multisteps-bs72-e35 | 61.8188 | 87.0836 | 67,380,196,352 | 12,376,439 | 35 |
-| mini_st2stv2-i3d_v2-f32-multisteps-bs48-e35 | 63.4969 | 88.2702 | 134,993,359,872 | 12,376,439 | 35 |
-| mini_st2stv2-i3d_v2-f64-multisteps-syncbn-bs36-e35 | 67.8862 | 90.9045 | 270,452,654,080 | 12,376,439 | 35|
-| mini_st2stv2-i3d_v2-tp-max-f8-cosine-bs72-e75 | 50.8094 | 78.3541 | 21,411,353,600 | 12,376,439 | 75 |
-| mini_st2stv2-i3d_v2-tp-max-f16-multisteps-bs72-e35 | 57.1489 | 84.2105 | 42,822,707,200 | 12,376,439 | 35 |
-| mini_st2stv2-i3d_v2-tp-max-f32-multisteps-bs72-e35 | 61.5984 | 87.2108 | 85,645,414,400 | 12,376,439 | 35 |
-| mini_st2stv2-i3d_v2-tp-max-f64-multisteps-syncbn-bs36-e35 | 67.8269 | 91.3873 | 171,290,828,800 | 12,376,439 | 35|
+| mini_st2stv2-i3d-f8-cosine-bs72-e75 | 56.3607 | 82.49 | 33,573,614,592 | 12,376,439 | 75 |
+| mini_st2stv2-i3d-f16-multisteps-bs72-e35 | 61.8188 | 87.0836 | 67,380,196,352 | 12,376,439 | 35 |
+| mini_st2stv2-i3d-f32-multisteps-bs48-e35 | 63.4969 | 88.2702 | 134,993,359,872 | 12,376,439 | 35 |
+| mini_st2stv2-i3d-f64-multisteps-syncbn-bs36-e35 | 67.8862 | 90.9045 | 270,452,654,080 | 12,376,439 | 35|
+| mini_st2stv2-i3d-tp-max-f8-cosine-bs72-e75 | 50.8094 | 78.3541 | 21,411,353,600 | 12,376,439 | 75 |
+| mini_st2stv2-i3d-tp-max-f16-multisteps-bs72-e35 | 57.1489 | 84.2105 | 42,822,707,200 | 12,376,439 | 35 |
+| mini_st2stv2-i3d-tp-max-f32-multisteps-bs72-e35 | 61.5984 | 87.2108 | 85,645,414,400 | 12,376,439 | 35 |
+| mini_st2stv2-i3d-tp-max-f64-multisteps-syncbn-bs36-e35 | 67.8269 | 91.3873 | 171,290,828,800 | 12,376,439 | 35|
 | | | | | |
 | mini_st2stv2-i3d-resnet-18-f8-cosine-bs72-e75 | 55.4454 | 81.7696 | 43,217,190,912 | 33,210,903 | 75 |
 | mini_st2stv2-i3d-resnet-18-f16-multisteps-bs72-e35 | 61.412 | 86.6429 | 86,434,381,824 | 33,210,903 | 35 |
@@ -183,14 +183,14 @@ The model name should self-explain the experimental setting
 | mini_kinetics400-s3d-resnet-50-tp-f64-multisteps-syncbn-bs36-e45* | 74.9898 | 91.9207 | 157,377,626,112 | 27,716,616 | 43|
 | | | | | |
 | | | | | |
-| mini_kinetics400-i3d_v2-f8-cosine-bs72-e100 | 68.0899 | 87.6182 | 33,573,614,592 | 12,492,264 | 100|
-| mini_kinetics400-i3d_v2-f16-multisteps-bs72-e45 | 70.8651 | 89.387 | 67,380,196,352 | 12,492,264 | 45|
-| mini_kinetics400-i3d_v2-f32-multisteps-syncbn-bs36-e45 | 73.6687 | 91.1382 | 135,226,327,040 | 12,492,264 | 45|
-| mini_kinetics400-i3d_v2-f64-multisteps-syncbn-bs36-e45 | 74.9543 | 91.6921 | 270,452,654,080 | 12,492,264 | 45|
-| mini_kinetics400-i3d_v2-tp-max-f8-cosine-bs72-e100 | 62.3869 | 84.0398 | 21,411,353,600 | 12,492,264 | 100|
-| mini_kinetics400-i3d_v2-tp-max-f16-multisteps-bs72-e45 | 66.3414 | 86.9472 | 42,822,707,200 | 12,492,264 | 45|
-| mini_kinetics400-i3d_v2-tp-max-f32-multisteps-bs72-e45 | 71.1192 | 89.0312 | 85,645,414,400 | 12,492,264 | 45|
-| mini_kinetics400-i3d_v2-tp-max-f64-multisteps-syncbn-bs36-e45 | 73.1301 | 91.1281 | 171,290,828,800 | 12,492,264 | 45|
+| mini_kinetics400-i3d-f8-cosine-bs72-e100 | 68.0899 | 87.6182 | 33,573,614,592 | 12,492,264 | 100|
+| mini_kinetics400-i3d-f16-multisteps-bs72-e45 | 70.8651 | 89.387 | 67,380,196,352 | 12,492,264 | 45|
+| mini_kinetics400-i3d-f32-multisteps-syncbn-bs36-e45 | 73.6687 | 91.1382 | 135,226,327,040 | 12,492,264 | 45|
+| mini_kinetics400-i3d-f64-multisteps-syncbn-bs36-e45 | 74.9543 | 91.6921 | 270,452,654,080 | 12,492,264 | 45|
+| mini_kinetics400-i3d-tp-max-f8-cosine-bs72-e100 | 62.3869 | 84.0398 | 21,411,353,600 | 12,492,264 | 100|
+| mini_kinetics400-i3d-tp-max-f16-multisteps-bs72-e45 | 66.3414 | 86.9472 | 42,822,707,200 | 12,492,264 | 45|
+| mini_kinetics400-i3d-tp-max-f32-multisteps-bs72-e45 | 71.1192 | 89.0312 | 85,645,414,400 | 12,492,264 | 45|
+| mini_kinetics400-i3d-tp-max-f64-multisteps-syncbn-bs36-e45 | 73.1301 | 91.1281 | 171,290,828,800 | 12,492,264 | 45|
 | | | | | |
 | mini_kinetics400-i3d-resnet-18-f8-cosine-bs72-e100 | 66.5345 | 86.7948 | 43,217,190,912 | 33,268,872 | 100|
 | mini_kinetics400-i3d-resnet-18-f16-multisteps-bs72-e45 | 70.367 | 89.1939 | 86,434,381,824 | 33,268,872 | 45|
@@ -301,14 +301,14 @@ The model name should self-explain the experimental setting
 | mini_moments-s3d-resnet-50-tp-f64-multisteps-syncbn-bs36-e35 | 27.7578 | 53.9568 | 157,377,626,112 | 27,716,616 | 35|
 | | | | | |
 | | | | | |
-| mini_moments-i3d_v2-f8-cosine-bs60-e75 | 22.42 | 45.54 | 33,573,614,592 | 12,492,264 | 75|
-| mini_moments-i3d_v2-f16-multisteps-bs60-e35 | 25.56 | 50.27 | 67,380,196,352 | 12,492,264 | 35|
-| mini_moments-i3d_v2-f32-multisteps-bs48-e35 | 26.17 | 51.82 | 135,226,327,040 | 12,492,264 | 35|
-| mini_moments-i3d_v2-f64-multisteps-syncbn-bs36-e35 | 26.4388 | 52.2782 | 270,452,654,080 | 12,492,264 | 35|
-| mini_moments-i3d_v2-tp-max-f8-cosine-bs72-e75 | 21.83 | 44.08 | 21,411,353,600 | 12,492,264 | 75|
-| mini_moments-i3d_v2-tp-max-f16-multisteps-bs72-e35 | 24.66 | 48.75 | 42,822,707,200 | 12,492,264 | 35|
-| mini_moments-i3d_v2-tp-max-f32-multisteps-bs72-e35 | 25.94 | 51.47 | 85,645,414,400 | 12,492,264 | 35|
-| mini_moments-i3d_v2-tp-max-f64-multisteps-syncbn-bs36-e35 | 26.6687 | 52.5979 | 171,290,828,800 | 12,492,264 | 35|
+| mini_moments-i3d-f8-cosine-bs60-e75 | 22.42 | 45.54 | 33,573,614,592 | 12,492,264 | 75|
+| mini_moments-i3d-f16-multisteps-bs60-e35 | 25.56 | 50.27 | 67,380,196,352 | 12,492,264 | 35|
+| mini_moments-i3d-f32-multisteps-bs48-e35 | 26.17 | 51.82 | 135,226,327,040 | 12,492,264 | 35|
+| mini_moments-i3d-f64-multisteps-syncbn-bs36-e35 | 26.4388 | 52.2782 | 270,452,654,080 | 12,492,264 | 35|
+| mini_moments-i3d-tp-max-f8-cosine-bs72-e75 | 21.83 | 44.08 | 21,411,353,600 | 12,492,264 | 75|
+| mini_moments-i3d-tp-max-f16-multisteps-bs72-e35 | 24.66 | 48.75 | 42,822,707,200 | 12,492,264 | 35|
+| mini_moments-i3d-tp-max-f32-multisteps-bs72-e35 | 25.94 | 51.47 | 85,645,414,400 | 12,492,264 | 35|
+| mini_moments-i3d-tp-max-f64-multisteps-syncbn-bs36-e35 | 26.6687 | 52.5979 | 171,290,828,800 | 12,492,264 | 35|
 | | | | | |
 | mini_moments-i3d-resnet-18-f8-cosine-bs72-e75 | 20.9 | 41.76 | 43,217,190,912 | 33,268,872 | 75|
 | mini_moments-i3d-resnet-18-f16-multisteps-bs72-e35 | 22.31 | 45.11 | 86,434,381,824 | 33,268,872 | 35|
@@ -417,14 +417,14 @@ The model name should self-explain the experimental setting
 | mini_st2stv2-s3d-resnet-50-ts-f64-multisteps-syncbn-bs36-e35 | 68.3858 | 91.455 | 157,377,626,112 | 27,485,079 | 35|
 | | | | | |
 | | | | | |
-| mini_st2stv2-i3d_v2-f8-cosine-bs72-e75 | 56.3607 | 82.49 | 33,573,614,592 | 12,376,439 | 75 |
-| mini_st2stv2-i3d_v2-f16-multisteps-bs72-e35 | 61.8188 | 87.0836 | 67,380,196,352 | 12,376,439 | 35 |
-| mini_st2stv2-i3d_v2-f32-multisteps-bs48-e35 | 63.4969 | 88.2702 | 134,993,359,872 | 12,376,439 | 35 |
-| mini_st2stv2-i3d_v2-f64-multisteps-syncbn-bs36-e35 | 67.8862 | 90.9045 | 270,452,654,080 | 12,376,439 | 35|
-| mini_st2stv2-i3d_v2-ts-max-f8-cosine-bs72-e75 | 50.8094 | 78.3541 | 21,411,353,600 | 12,376,439 | 75 |
-| mini_st2stv2-i3d_v2-ts-max-f16-multisteps-bs72-e35 | 57.1489 | 84.2105 | 42,822,707,200 | 12,376,439 | 35 |
-| mini_st2stv2-i3d_v2-ts-max-f32-multisteps-bs72-e35 | 61.5984 | 87.2108 | 85,645,414,400 | 12,376,439 | 35 |
-| mini_st2stv2-i3d_v2-ts-max-f64-multisteps-syncbn-bs36-e35 | 67.8269 | 91.3873 | 171,290,828,800 | 12,376,439 | 35|
+| mini_st2stv2-i3d-f8-cosine-bs72-e75 | 56.3607 | 82.49 | 33,573,614,592 | 12,376,439 | 75 |
+| mini_st2stv2-i3d-f16-multisteps-bs72-e35 | 61.8188 | 87.0836 | 67,380,196,352 | 12,376,439 | 35 |
+| mini_st2stv2-i3d-f32-multisteps-bs48-e35 | 63.4969 | 88.2702 | 134,993,359,872 | 12,376,439 | 35 |
+| mini_st2stv2-i3d-f64-multisteps-syncbn-bs36-e35 | 67.8862 | 90.9045 | 270,452,654,080 | 12,376,439 | 35|
+| mini_st2stv2-i3d-ts-max-f8-cosine-bs72-e75 | 50.8094 | 78.3541 | 21,411,353,600 | 12,376,439 | 75 |
+| mini_st2stv2-i3d-ts-max-f16-multisteps-bs72-e35 | 57.1489 | 84.2105 | 42,822,707,200 | 12,376,439 | 35 |
+| mini_st2stv2-i3d-ts-max-f32-multisteps-bs72-e35 | 61.5984 | 87.2108 | 85,645,414,400 | 12,376,439 | 35 |
+| mini_st2stv2-i3d-ts-max-f64-multisteps-syncbn-bs36-e35 | 67.8269 | 91.3873 | 171,290,828,800 | 12,376,439 | 35|
 | | | | | |
 | mini_st2stv2-i3d-resnet-18-f8-cosine-bs72-e75 | 55.4454 | 81.7696 | 43,217,190,912 | 33,210,903 | 75 |
 | mini_st2stv2-i3d-resnet-18-f16-multisteps-bs72-e35 | 61.412 | 86.6429 | 86,434,381,824 | 33,210,903 | 35 |
@@ -531,14 +531,14 @@ The model name should self-explain the experimental setting
 | mini_kinetics400-s3d-resnet-50-ts-f64-multisteps-syncbn-bs36-e45* | 74.9898 | 91.9207 | 157,377,626,112 | 27,716,616 | 43|
 | | | | | |
 | | | | | |
-| mini_kinetics400-i3d_v2-f8-cosine-bs72-e100 | 68.0899 | 87.6182 | 33,573,614,592 | 12,492,264 | 100|
-| mini_kinetics400-i3d_v2-f16-multisteps-bs72-e45 | 70.8651 | 89.387 | 67,380,196,352 | 12,492,264 | 45|
-| mini_kinetics400-i3d_v2-f32-multisteps-syncbn-bs36-e45 | 73.6687 | 91.1382 | 135,226,327,040 | 12,492,264 | 45|
-| mini_kinetics400-i3d_v2-f64-multisteps-syncbn-bs36-e45 | 74.9543 | 91.6921 | 270,452,654,080 | 12,492,264 | 45|
-| mini_kinetics400-i3d_v2-ts-max-f8-cosine-bs72-e100 | 62.3869 | 84.0398 | 21,411,353,600 | 12,492,264 | 100|
-| mini_kinetics400-i3d_v2-ts-max-f16-multisteps-bs72-e45 | 66.3414 | 86.9472 | 42,822,707,200 | 12,492,264 | 45|
-| mini_kinetics400-i3d_v2-ts-max-f32-multisteps-bs72-e45 | 71.1192 | 89.0312 | 85,645,414,400 | 12,492,264 | 45|
-| mini_kinetics400-i3d_v2-ts-max-f64-multisteps-syncbn-bs36-e45 | 73.1301 | 91.1281 | 171,290,828,800 | 12,492,264 | 45|
+| mini_kinetics400-i3d-f8-cosine-bs72-e100 | 68.0899 | 87.6182 | 33,573,614,592 | 12,492,264 | 100|
+| mini_kinetics400-i3d-f16-multisteps-bs72-e45 | 70.8651 | 89.387 | 67,380,196,352 | 12,492,264 | 45|
+| mini_kinetics400-i3d-f32-multisteps-syncbn-bs36-e45 | 73.6687 | 91.1382 | 135,226,327,040 | 12,492,264 | 45|
+| mini_kinetics400-i3d-f64-multisteps-syncbn-bs36-e45 | 74.9543 | 91.6921 | 270,452,654,080 | 12,492,264 | 45|
+| mini_kinetics400-i3d-ts-max-f8-cosine-bs72-e100 | 62.3869 | 84.0398 | 21,411,353,600 | 12,492,264 | 100|
+| mini_kinetics400-i3d-ts-max-f16-multisteps-bs72-e45 | 66.3414 | 86.9472 | 42,822,707,200 | 12,492,264 | 45|
+| mini_kinetics400-i3d-ts-max-f32-multisteps-bs72-e45 | 71.1192 | 89.0312 | 85,645,414,400 | 12,492,264 | 45|
+| mini_kinetics400-i3d-ts-max-f64-multisteps-syncbn-bs36-e45 | 73.1301 | 91.1281 | 171,290,828,800 | 12,492,264 | 45|
 | | | | | |
 | mini_kinetics400-i3d-resnet-18-f8-cosine-bs72-e100 | 66.5345 | 86.7948 | 43,217,190,912 | 33,268,872 | 100|
 | mini_kinetics400-i3d-resnet-18-f16-multisteps-bs72-e45 | 70.367 | 89.1939 | 86,434,381,824 | 33,268,872 | 45|
@@ -649,14 +649,14 @@ The model name should self-explain the experimental setting
 | mini_moments-s3d-resnet-50-ts-f64-multisteps-syncbn-bs36-e35 | 27.7578 | 53.9568 | 157,377,626,112 | 27,716,616 | 35|
 | | | | | |
 | | | | | |
-| mini_moments-i3d_v2-f8-cosine-bs60-e75 | 22.42 | 45.54 | 33,573,614,592 | 12,492,264 | 75|
-| mini_moments-i3d_v2-f16-multisteps-bs60-e35 | 25.56 | 50.27 | 67,380,196,352 | 12,492,264 | 35|
-| mini_moments-i3d_v2-f32-multisteps-bs48-e35 | 26.17 | 51.82 | 135,226,327,040 | 12,492,264 | 35|
-| mini_moments-i3d_v2-f64-multisteps-syncbn-bs36-e35 | 26.4388 | 52.2782 | 270,452,654,080 | 12,492,264 | 35|
-| mini_moments-i3d_v2-ts-max-f8-cosine-bs72-e75 | 21.83 | 44.08 | 21,411,353,600 | 12,492,264 | 75|
-| mini_moments-i3d_v2-ts-max-f16-multisteps-bs72-e35 | 24.66 | 48.75 | 42,822,707,200 | 12,492,264 | 35|
-| mini_moments-i3d_v2-ts-max-f32-multisteps-bs72-e35 | 25.94 | 51.47 | 85,645,414,400 | 12,492,264 | 35|
-| mini_moments-i3d_v2-ts-max-f64-multisteps-syncbn-bs36-e35 | 26.6687 | 52.5979 | 171,290,828,800 | 12,492,264 | 35|
+| mini_moments-i3d-f8-cosine-bs60-e75 | 22.42 | 45.54 | 33,573,614,592 | 12,492,264 | 75|
+| mini_moments-i3d-f16-multisteps-bs60-e35 | 25.56 | 50.27 | 67,380,196,352 | 12,492,264 | 35|
+| mini_moments-i3d-f32-multisteps-bs48-e35 | 26.17 | 51.82 | 135,226,327,040 | 12,492,264 | 35|
+| mini_moments-i3d-f64-multisteps-syncbn-bs36-e35 | 26.4388 | 52.2782 | 270,452,654,080 | 12,492,264 | 35|
+| mini_moments-i3d-ts-max-f8-cosine-bs72-e75 | 21.83 | 44.08 | 21,411,353,600 | 12,492,264 | 75|
+| mini_moments-i3d-ts-max-f16-multisteps-bs72-e35 | 24.66 | 48.75 | 42,822,707,200 | 12,492,264 | 35|
+| mini_moments-i3d-ts-max-f32-multisteps-bs72-e35 | 25.94 | 51.47 | 85,645,414,400 | 12,492,264 | 35|
+| mini_moments-i3d-ts-max-f64-multisteps-syncbn-bs36-e35 | 26.6687 | 52.5979 | 171,290,828,800 | 12,492,264 | 35|
 | | | | | |
 | mini_moments-i3d-resnet-18-f8-cosine-bs72-e75 | 20.9 | 41.76 | 43,217,190,912 | 33,268,872 | 75|
 | mini_moments-i3d-resnet-18-f16-multisteps-bs72-e35 | 22.31 | 45.11 | 86,434,381,824 | 33,268,872 | 35|
